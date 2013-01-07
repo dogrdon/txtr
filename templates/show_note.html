@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% if session.logged_in %}
+			{% for note in note %}
+			<a class='aa' href=/note/delete/{{note.id}} onclick="return confirm('Are you sure you want to delete: {{note.title}}?')"><i class="icon-cancel-2"></i></a>
+			<a class='aa' href=/note/edit/{{note.id}}><i class="icon-pencil" alt="edit"></i></a>
+		    <h2>{{ note.title }}</h2>
+			<p>{{ note.text|safe }}</p>
+			<p>tagged with: <em>{{ note.tags }}</em></p>
+			<p>{{ note.created }}</p>
+			<hr/>
+			{% endfor %}
+	    {% else %}
+	    	<p class="message">Log in to view notes individually.</p>
+	{% endif %}
+ 
+{% endblock %}

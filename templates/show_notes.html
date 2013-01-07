@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% if session.logged_in %}
+	<i class="icon-sunrise"></i>
+		<div id="new-note">
+		<form action="{{ url_for('new_note') }}" method=post class='new-note'>
+			<dl>
+				<dt> Title: </dt>
+					<dd><input type=text size=30 name='title'/></dd>
+				<dt> Text: </dt>
+					<dd><textarea name='text' rows=5 cols=80></textarea> </dd>
+				
+				<dt> Tags (<em>comma delimted</em>) </dt>
+					<dd><input type=text size=30 name='tags'/></dd>
+				<dd><input type=submit value='Create'/> </dd>
+			</dl>
+		</form>
+		</div>
+	{% endif %}
+	<ul class='notes'>
+	{% for note in notes %}
+		<li>
+			<a class='aa' href=/note/delete/{{note.id}} onclick="return confirm('Are you sure you want to delete: {{note.title}}?')"><i class="icon-cancel-2"></i></a>
+			<a class='aa' href=/note/edit/{{note.id}}><i class="icon-pencil" alt="edit"></i></a>
+			
+			<a href=/note/{{note.id}}><h2>{{ note.title }}</h2></a>
+			<h1>{{ note.id }}</h1>
+			<p>{{ note.text|safe }}</p>
+			<!-- <p>tagged with: <em>{{ note.tags }}</em></p> -->
+			{% for n in note.tags %}
+				<a href="/notes/{{n}}"> {{ n }} </a>
+			{% endfor %}
+			<hr/>
+		</li>
+	{% else %}
+		<li><p><em> No notes yet, create one.</em></p></li>
+	{% endfor %}
+	</ul>
+ 
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% if session.logged_in %}
+		{% for note in note %}
+		<form action=/note/update/{{note.id}} method=post class='edit-note'>
+			
+			<dl>
+				<dt> Title: </dt>
+					<dd><input type=text size=30 name='title' value='{{ note.title }}'/></dd>
+				<dt> Text: </dt>
+					<dd><textarea name='text' rows=5 cols=40>{{ note.text|safe }}</textarea> </dd>
+				
+				<dt> Tags (<em>comma delimted</em>) </dt>
+					<dd><input type=text size=30 name='tags' value='{{ note.tags }}'/></dd>
+				<dd><input type=submit value='Update'/> </dd>
+			</dl>
+			
+		</form>
+		{% endfor %}
+	{% else %}
+		<p class"message">Log in to edit a note.</p>
+
+	{% endif %}
+
+ 
+{% endblock %}

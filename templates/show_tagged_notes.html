@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	<ul class='tag notes'>
+	{% for note in tag_notes %}
+		<li>
+			<a class='aa' href=/note/delete/{{note.id}}><i class="icon-cancel-2"></i></a>
+			<a class='aa' href=/note/edit/{{note.id}}><i class="icon-pencil" alt="edit"></i></a>
+			
+			<a href=/note/{{note.id}}><h2>{{ note.title }}</h2></a>
+			<h1>{{ note.id }}</h1>
+			<p>{{ note.text|safe }}</p>
+			<p>tagged with: <em>{{ note.tags }}</em></p>
+			
+			<hr/>
+		</li>
+	{% else %}
+		<li><p><em> No notes for this tag.</em></p></li>
+	{% endfor %}
+	</ul>
+ 
+{% endblock %}

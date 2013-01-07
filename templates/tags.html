@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+<h3> All Tags </h3>
+	<ol class='tags'>
+	{% for tag in end_tags %}
+		<li>
+			<a href="/notes/{{ tag }}"<p>{{ tag }}</p></a>
+		</li>
+	{% else %}
+		<li><p><em> No tags yet, create a note.</em></p></li>
+	{% endfor %}
+	</ol>
+ 
+{% endblock %}
