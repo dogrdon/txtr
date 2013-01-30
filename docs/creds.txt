@@ -1,5 +1,0 @@
-Dropbox API:
-App status    Development (Apply for production status)
-App key dw20hygibt5i77p
-App secret  gkp2dhjr5rbkgdh
-Access type App folder

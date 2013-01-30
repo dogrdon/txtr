@@ -77,12 +77,12 @@ def show_note(id):
 		#text = l['text']
 		tags = l['tags']
 		title = l['title'].replace(" ","_")
-		text = l['text'].encode('utf8') #probably need to do some unicode conversion
+		text = l['text'].encode("utf-8") #probably need to do some unicode conversion
 		filename = title+"-"+l['created'][0:11]
 		content = 'text: ' + text + '\n' + 'tags: ' + tags
 
 	#creating a file from a viewed note? TODO: why don't we just try basic file io here.
-	myFile = Response(note, mimetype="text/plain")
+	#myFile = Response(note, mimetype="text/plain")
 	myFile = open(LOCAL_FOLDER+'/'+filename, 'w')
 	myFile.write(content)
 	myFile.close()

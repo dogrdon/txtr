@@ -6,6 +6,19 @@
 <script src="/static/js/libs/jquery-1.8.3.min.js"></script>
 <script src="/static/js/libs/underscore-min.js"></script>
 <script src="/static/js/libs/backbone-min.js"></script>
+<!--setting up pagedown-->
+<link rel="stylesheet" type="text/css" href="/static/js/libs/pagedown/wmd.css" />
+<script type="text/javascript" src="/static/js/libs/pagedown/Markdown.Converter.js"></script>
+<script type="text/javascript" src="/static/js/libs/pagedown/Markdown.Sanitizer.js"></script>
+<script type="text/javascript" src="/static/js/libs/pagedown/Markdown.Editor.js"></script>
+ <script type="text/javascript">
+$(function () {
+     var converter = new Markdown.Converter();
+     var editor = new Markdown.Editor(converter);
+     editor.run();
+     });
+</script>
+
  <div class='page'>
 	<div id="logo-space">
 	<a id="logo" href="/"><img src="/static/images/logo.png"/ alt="by Document designed by Maximilian Becker from The Noun Project"><h1>Txtr</h1></a>

@@ -20,5 +20,6 @@ h2              { font-size: 1.2em; }*/
 input[type='submit']{ margin: 5px 0 0 0;}
 a.aa            { float: right; }
 div#logo-space  { text-align: center; }
-div#new-note 	{ width: 100%; }
-form.new-note   { margin: auto; }
+div#new-note 	{ width: 100%; margin: auto;}
+form     {width: 100%;}
+form dl  { 	margin: 0px auto; overflow: auto;}

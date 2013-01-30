@@ -8,7 +8,13 @@
 				<dt> Title: </dt>
 					<dd><input type=text size=30 name='title'/></dd>
 				<dt> Text: </dt>
-					<dd><textarea name='text' rows=5 cols=80></textarea> </dd>
+					<dd>
+					<div class="wmd-panel">
+            		<div id="wmd-button-bar"></div>
+					<textarea class="wmd-input" id="wmd-input" name='text' rows=5 cols=80></textarea> 
+					</div>
+        			<div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+					</dd>
 				
 				<dt> Tags (<em>comma delimted</em>) </dt>
 					<dd><input type=text size=30 name='tags'/></dd>

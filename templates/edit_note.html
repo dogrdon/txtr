@@ -8,7 +8,13 @@
 				<dt> Title: </dt>
 					<dd><input type=text size=30 name='title' value='{{ note.title }}'/></dd>
 				<dt> Text: </dt>
-					<dd><textarea name='text' rows=5 cols=40>{{ note.text|safe }}</textarea> </dd>
+					<dd>
+					<div class="wmd-panel">
+            		<div id="wmd-button-bar"></div>
+					<textarea class="wmd-input" id="wmd-input" name='text' rows=5 cols=40>{{ note.text|safe }}</textarea> 
+					</div>
+        			<div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+					</dd>
 				
 				<dt> Tags (<em>comma delimted</em>) </dt>
 					<dd><input type=text size=30 name='tags' value='{{ note.tags }}'/></dd>
