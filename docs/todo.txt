@@ -2,7 +2,7 @@ TODO: Start - 23dec2012
 
 #midscale#
 * justify moving things to backbone
-* formatting datetimes (might be "easier" with backbone)
+x formatting datetimes (might be "easier" with backbone)
 * get sensitive items out of code and push up to github
 * implement tags via separate table (tag-table and interpreter-table)
 
@@ -10,5 +10,5 @@ TODO: Start - 23dec2012
 * dropbox integration
     - how to convert a document to a single file
     - upload each file to dropbox
-* github integration (?)
+x github integration (?)
 * move things to backbone
